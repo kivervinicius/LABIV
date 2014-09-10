@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+
+	<!-- Define uma regra de navegacao do JSF -->
+	
+	<navigation-rule>
+		<!-- Indica em qual xhtml que irá iniciar a regra -->
+		<from-view-id>pages/categoria/categoriaManter.xhtml</from-view-id>
+		<!-- Todas as verificacoes(casos) deverão ser definidas com as tags navigation-case -->
+		<navigation-case>
+			<!-- Retorno em String do java -->
+			<from-outcome>exibirFormulario</from-outcome>
+			<!-- Para onde irá redirecionar -->
+			<to-view-id>pages/categoria/categoriaIncluirAlterar.xhtml</to-view-id>
+			<!-- Redireciona para a url indicada acima -->
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>pages/categoria/categoriaManter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>pages/categoria/categoriaIncluirAlterar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>pages/categoria/categoriaManter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

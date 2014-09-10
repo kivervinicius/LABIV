@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Usuário</title>
+	</h:head>
+	<h:body>
+		<h:form id="frmUsuario">
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+					Usuario
+				</f:facet>
+				<p:outputLabel for="txtNome" value="Nome: "/>
+				<p:inputText value="#{usuarioController.usuario.nome}" id="txtNome"/>
+				
+				<p:outputLabel for="txtCpf" value="Cpf"></p:outputLabel>
+				<p:inputText value="#{usuarioController.usuario.cpf}" id="txtCpf"/>
+				
+				<p:outputLabel for="cboCargo" value="Cargo:"></p:outputLabel>
+				<p:selectOneMenu value="#{usuarioController.usuario.cargo}" id="cboCargo">
+					<f:selectItem itemValue="" itemLabel="Selecione" noSelectionOption="true"/>
+					<f:selectItem itemValue="Programador" itemLabel="Programador"/>
+					<f:selectItem itemValue="Gerente" itemLabel="Gerente"/>
+					<f:selectItem itemValue="Suporte" itemLabel="Suporte"/>
+					<f:selectItem itemValue="Financeiro" itemLabel="Financeiro"/>
+				</p:selectOneMenu>
+			
+				<f:facet name="footer">
+					<p:commandButton value="Enviar" actionListener="#{usuarioController.executar()}"/>					
+				</f:facet>
+			</p:panelGrid>
+		</h:form>
+	</h:body>
+</html>

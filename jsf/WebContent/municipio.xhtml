@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<title>Municipio</title>
+		<meta charset="utf-8"/>
+	</h:head>
+	<h:body>
+		
+		<h:form id="frmMunicipio">
+			
+			<h:panelGrid columns="2">
+				
+				<h:outputLabel for="txtNome" value="Nome:"/>
+				<h:inputText value="#{municipioController.municipio.nome}"/>
+				
+				<h:outputLabel for="cboEstado">Estado:</h:outputLabel>
+				<h:selectOneMenu value="#{municipioController.municipio.estado}">
+					<f:selectItems value="#{municipioController.estados}" />
+				</h:selectOneMenu>
+				
+				<h:outputLabel for="txtCep" value="Cep:"/>
+				<h:inputText value="#{municipioController.municipio.cep}" id="txtCep"/>
+				
+				
+				<!-- HACK(SOMENTE PARA PULAR UMA COLUNA) -->
+				<h:commandLink value="Enviar" actionListener="#{municipioController.executar()}"/>
+			</h:panelGrid>
+			
+		</h:form>
+		
+	</h:body>
+</html>

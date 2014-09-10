@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14097073155100" configfile="/locadora/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/categoria/categoriaManter.xhtml" id="pf14097079072401" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf14097079072402 pf14097955001340" inlinks="pf14097097375316 pf14097955001340" path="pages/categoria/categoriaManter.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/categoria/categoriaIncluirAlterar.xhtml" id="pf14097079072403" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14097097375316" inlinks="pf14097079072402" path="pages/categoria/categoriaIncluirAlterar.xhtml"/>
+  <links id="pf14097079072402" target="pf14097079072403" source="pf14097079072401" outcome="exibirFormulario" redirect="true"/>
+  <links id="pf14097097375316" target="pf14097079072401" source="pf14097079072403" outcome="listar" redirect="true"/>
+  <links id="pf14097955001340" target="pf14097079072401" source="pf14097079072401" outcome="listar" redirect="true"/>
+</pageflow:Pageflow>
