@@ -10,10 +10,11 @@
 	<h:form>
 		<p:panelGrid columns="2">
 			<p:outputLabel for="txtId" value="Codigo"/>
-			<p:inputText value="#{categoriaAcao.categoria.id}" id="txtId"/>
+			<p:inputText value="#{categoriaAcao.categoria.id}" id="txtId" readonly="true"/>
 			
 			<p:outputLabel for="txtNome" value="Nome"/>
-			<p:inputText value="#{categoriaAcao.categoria.nome}" id="txtNome"/>
+			<p:inputText value="#{categoriaAcao.categoria.nome}" id="txtNome" 
+				required="true" requiredMessage="Campo obrigatorio" />
 			
 			<!--  -->
 			
@@ -24,7 +25,9 @@
 			<p:commandButton value="Alterar" 
 				action="#{categoriaAcao.alterar()}"
 				rendered="#{categoriaAcao.categoria.id != null}"/>
+				
 		</p:panelGrid>
+		<p:growl id="mensagens" autoUpdate="true"/>
 	</h:form>
 </h:body>
 </html>

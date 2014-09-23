@@ -39,15 +39,17 @@ public class CategoriaAcao {
 	}
 	
 	public String alterar(){
-		Integer localizacao = this.categorias.indexOf(this.categoria);
-		this.categorias.set(localizacao, this.categoria);
+		/*Integer localizacao = this.categorias.indexOf(this.categoria);
+		this.categorias.set(localizacao, this.categoria);*/
 		//this.categorias[localizacao] = this.categoria;
+		this.categoriaNegocio.atualizar(this.categoria);
 		return "listar";
 	}
 	
 	public String remover(){
 		this.categoria = this.categoriasDM.getRowData();
-		this.categorias.remove(this.categoria);
+		//this.categorias.remove(this.categoria);
+		this.categoriaNegocio.remover(this.categoria);
 		return "listar";
 	}
 	

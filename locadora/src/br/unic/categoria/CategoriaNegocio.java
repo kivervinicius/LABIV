@@ -50,5 +50,34 @@ public class CategoriaNegocio {
 		}
 		
 	}
+	
+	public void atualizar(Categoria categoria){
+		conexao = new Conexao();
+		try{
+			String sql = "UPDATE categoria set CATEGORIA_NOME = ? where CATEGORIA_ID = ?";
+			PreparedStatement preparedStatement = conexao.getConn().prepareStatement(sql);
+			preparedStatement.setString(1, categoria.getNome());
+			preparedStatement.setInt(2, categoria.getId());
+			preparedStatement.executeUpdate();
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally{
+			conexao.fecharConexao();
+		}
+	}
+	
+	public void remover(Categoria categoria){
+		conexao = new Conexao();
+		try{
+			String sql = "delete from categoria where CATEGORIA_ID = ?";
+			PreparedStatement preparedStatement = conexao.getConn().prepareStatement(sql);
+			preparedStatement.setInt(1, categoria.getId());
+			preparedStatement.executeUpdate();
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally{
+			conexao.fecharConexao();
+		}
+	}
 
 }
