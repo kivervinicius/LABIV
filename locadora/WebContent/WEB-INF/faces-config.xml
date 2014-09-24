@@ -36,4 +36,28 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<from-view-id>/pages/empresa/empresaManter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>/pages/empresa/empresaManter.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>exibirFormulario</from-outcome>
+			<to-view-id>/pages/empresa/empresaIncluirAlterar.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/empresa/empresaIncluirAlterar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>listar</from-outcome>
+			<to-view-id>/pages/empresa/empresaManter.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	
 </faces-config>
