@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Empresa</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				Empresa
+			</f:facet>
+			<p:outputLabel for="txtId">
+				Codigo
+			</p:outputLabel>
+			<p:inputText id="txtId" value="#{empresaAcao.empresa.id}"/>
+			
+			<p:outputLabel for="txtNome">
+				Nome
+			</p:outputLabel>
+			<p:inputText id="txtNome" value="#{empresaAcao.empresa.nome}" 
+				maxlength="10"/>
+			
+			<p:outputLabel for="txtEmail">
+				E-mail
+			</p:outputLabel>
+			<p:inputText id="txtEmail" value="#{empresaAcao.empresa.email}"/>
+			
+			<p:outputLabel for="txtSite">
+				Site
+			</p:outputLabel>
+			<p:inputText id="txtSite" value="#{empresaAcao.empresa.site}"/>
+			
+			<p:outputLabel for="txtTelefone">
+				Telefone
+			</p:outputLabel>
+			<p:inputMask mask="(999) 9999-9999" id="txtTelefone" 
+				value="#{empresaAcao.empresa.telefone}" placeHolder="  " 
+				placeholder="(DDD) XXXX-XXXX"/>
+			
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

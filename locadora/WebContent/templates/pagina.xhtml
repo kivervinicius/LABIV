@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Locadora :: <ui:insert name="titulo"/> </title>
+	<style>
+		body{
+			background: #ccc;
+			color: #000;
+			font-size: 15px;
+			font-family: Verdana, Arial, Sans-Serif;
+			margin: 0px;
+		}
+		header{
+			background: #8E8E8E;
+			border-bottom: 1px solid #ddd;
+			text-align: center;
+			height: 100px;
+		}
+		header h1{
+			margin: 0px;
+			line-height: 100px;
+		}
+		#corpo{
+			width: 90%;
+			margin: auto;		
+		}
+		footer{
+			position: fixed;
+			bottom: 0px;
+			height: 80px;
+			background: #ddd;
+			border-top: 1px solid #ddd;
+			width: 100%;
+			text-align: center;
+			line-height: 80px;
+			font-size: 23px;
+		}
+	</style>
+</h:head>
+<h:body>
+	<header>
+		<h1>Locadora</h1>
+	</header>
+	
+	<section id="corpo">
+		<ui:insert name="corpo"/>	
+	</section>
+	
+	<footer>
+		<ui:insert name="rodape">
+			Unic - 2014
+		</ui:insert>
+	</footer>
+</h:body>
+</html>
