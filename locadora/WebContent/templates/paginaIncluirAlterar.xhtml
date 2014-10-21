@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:composition template="/templates/pagina.xhtml">
+	
+		<ui:define name="titulo">
+			<ui:insert name="tituloIncluirAlterar">
+			
+			
+			</ui:insert>
+		</ui:define>
+		 
+		<ui:define name="corpo">
+			<style>
+				#dvBarraTarefas{
+					height: 80px;
+					background: #fff;
+					border-radius: 5px;
+					margin-top: 5px;
+					border: 1px solid #8F8F8F; 
+				} 
+				#dvBarraTarefas .ui-button{
+					height: 72px;
+					margin-top: 4px;
+					border-radius: 5px;
+				}
+				.ui-datatable{
+					margin-top: 10px;
+				}
+			</style>
+			<h:form>
+				<div id="dvBarraTarefas">
+					<ui:insert name="barraTarefas"/>
+				</div> 
+				
+				<p:panelGrid columns="2">
+					<f:facet name="header">
+						<ui:insert name="tituloIncluirAlterar"/>
+					</f:facet>
+					
+					<ui:insert name="corpoIncluirAlterar">
+					
+					</ui:insert>
+				</p:panelGrid>
+				
+			</h:form>
+		</ui:define>
+		
+		
+	</ui:composition>
+</html>

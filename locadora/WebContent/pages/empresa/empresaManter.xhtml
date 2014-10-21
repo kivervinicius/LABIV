@@ -6,39 +6,54 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<title>Empresa</title>
-</h:head>
-<h:body>
-	<h:form>
-		<p:dataTable value="#{empresaAcao.empresasDM}" var="_empresa">
-			
-			<p:column>
-				<f:facet name="header">
-					Id
-				</f:facet>
-				<h:outputText value="#{_empresa.id}"/>
-			</p:column>
-			
-			<p:column>
-				<f:facet name="header">
-					Nome
-				</f:facet>
-				<h:outputText value="#{_empresa.nome}"/>
-			</p:column>
-			
-			<p:column>
-				<f:facet name="header">
-					Cnpj
-				</f:facet>
-				<h:outputText value="#{_empresa.cnpj}"/>
-			</p:column>
-			
-		</p:dataTable>
+	
+		<ui:composition template="/templates/paginaManter.xhtml">
+			<ui:define name="tituloManter">
+				Empresa
+			</ui:define>
+			<ui:define name="barraTarefas">
+				<p:commandButton action="#{empresaAcao.exibirFormulario()}" 
+							value="Inserir"/>
+			</ui:define> 
+			<ui:define name="corpoManter">
+					<p:dataTable value="#{empresaAcao.empresasDM}" var="_empresa">
+						<p:column>
+							<f:facet name="header">
+								Id
+							</f:facet>
+							<h:outputText value="#{_empresa.id}"/>
+						</p:column>
+						
+						<p:column>
+							<f:facet name="header">
+								Nome
+							</f:facet>
+							<h:outputText value="#{_empresa.nome}"/>
+						</p:column>
+						
+						<p:column>
+							<f:facet name="header">
+								Cnpj
+							</f:facet>
+							<h:outputText value="#{_empresa.cnpj}"/>
+						</p:column>
+						
+						<p:column>
+							<f:facet name="header">
+								Acao
+							</f:facet>
+							<p:commandButton 
+								action="#{empresaAcao.exibirFormularioAlterar()}" 
+								value="Editar"/>
+							<p:commandButton  
+								action="#{empresaAcao.remover()}" 
+								value="Remover"/>
+								
+						</p:column>
+						
+					</p:dataTable>
+			</ui:define>
 		
-		<p:commandButton action="#{empresaAcao.exibirFormulario()}" 
-			value="Inserir"/>
-		
-	</h:form>
-</h:body>
+		</ui:composition>
+
 </html>

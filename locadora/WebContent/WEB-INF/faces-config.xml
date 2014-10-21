@@ -59,5 +59,45 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<from-view-id>
+			pages/cliente/clienteManter.xhtml
+		</from-view-id>
+		<navigation-case>
+			<from-outcome>
+				listar
+			</from-outcome>
+			<to-view-id>
+				pages/cliente/clienteManter.xhtml
+			</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>
+				exibirFormulario
+			</from-outcome>
+			<to-view-id>
+				pages/cliente/clienteIncluirAlterar.xhtml
+			</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>
+			pages/cliente/clienteIncluirAlterar.xhtml
+		</from-view-id>
+		<navigation-case>
+			<from-outcome>
+				listar
+			</from-outcome>
+			<to-view-id>
+				pages/cliente/clienteManter.xhtml
+			</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	
 	
 </faces-config>

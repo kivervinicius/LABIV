@@ -43,7 +43,15 @@
 				value="#{empresaAcao.empresa.telefone}" placeHolder="  " 
 				placeholder="(DDD) XXXX-XXXX"/>
 			
+			<p:commandButton value="Cadastrar" 
+				action="#{empresaAcao.cadastrar()}" 
+				rendered="#{empresaAcao.empresa.id == null}"/>
+				
+			<p:commandButton value="Alterar" 
+				action="#{empresaAcao.alterar()}"
+				rendered="#{empresaAcao.empresa.id != null}"/>  
+			
 		</p:panelGrid>
-	</h:form>
+	</h:form> 
 </h:body>
 </html>
